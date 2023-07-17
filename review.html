@@ -19,6 +19,45 @@
 			color: darkgreen;
 			
 		}
+		.button:hover {background-color: #3e8e41}
+
+		.button:active {
+  			background-color: #3e8e41;
+  			box-shadow: 0 5px #666;
+ 		    transform: translateY(4px);}
+ 		.button span {
+  			cursor: pointer;
+ 		    display: inline-block;
+  			position: relative;
+  			transition: 0.5s;}
+
+		.button span:after {
+            content: '\00bb';
+  			position: absolute;
+  			opacity: 0;
+  			top: 0;
+  			right: -20px;
+  			transition: 0.5s;}
+
+		.button:hover span {
+  			padding-right: 25px;}
+
+		.button:hover span:after {
+  			opacity: 1;
+  			right: 0;}
+
+  		.button2{
+  			width: 100px;
+  			height: 100px;
+  			background-color: red;
+  			animation-name: example;
+  			animation-duration: 4s;}
+
+  		@keyframes example {
+  			0%   {background-color: red;}
+  			25%  {background-color: yellow;}
+ 			50%  {background-color: blue;}
+  			100% {background-color: green;}}
 	</style>
 
 	<script src="main.js"></script>
@@ -28,7 +67,9 @@
 	<h4>click on the pic to open Wikipedia </h4>
 	<a href="https://en.wikipedia.org/wiki/Dog"><img src="dog.jpeg"></a>
 	<h2 class="cl1">thank you for reading</h2>
-	<button type="button" onclick="changeBackgroundColor('blue','yellow')">click to change the backgroung color</button>
+	<button class="button" type="button" onclick="changeBackgroundColor('blue','yellow')">click</button>
+	<button class="button2" onclick="changeBackgroundColor('purple' ,'grey')">click</button>
+
 
 </body>
 </html>
